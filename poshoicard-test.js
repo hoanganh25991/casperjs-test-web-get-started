@@ -1,43 +1,90 @@
 // poshoicard-test.js
 var casperjs = casper;
 
-console.log("hello anh Torin");
+var $ = require('jquery');
 
-casperjs.test.begin('login pos.hoicard', 1, function suite(test) {
+var numberOfTest = 7;
 
-    casperjs.start("http://pos.hoicard.com/cms/dev", function() {
+casperjs.test.begin('test php error', numberOfTest, function suite(test) {
 
-        console.log("check form exist");
+	var url = 'http://pos.hoicard.com/cms/dev';
 
-        test.assertExists('form[name="hoipos_login"]', 'find form : ok');
+	console.log(url);
 
-        console.log("fill form, then login");
-        
-        this.fill('form[name="hoipos_login"]', {
-            email: 'arteastiq', 
-            password:  'zZzZzZz'
-        }, true);
+	console.log('login, user/pass arteastiq/zZzZzZz');
+
+	casperjs.start(url, function() {
+
+		console.log("check form exist");
+
+		test.assertExists('form[name="hoipos_login"]', 'find form : ok');
+
+		console.log("fill form, then login");
+
+		test.comment('ώ Logging in...');
+		
+		this.fill('form[name="hoipos_login"]', {
+			email: 'arteastiq', 
+			// password:  'zZzZzZz'
+			password:  'zZzZzZz'
+		}, true);
+	});
+
+	casperjs.then(function() {
+
+		// console.log("login success, go to page: ");
+		// var deleteConfirmModal = document.getElementById("deleteConfirmModal");
+
+		// console.log("baseURI of deleteConfirmModal: " + deleteConfirmModal.childNodes[0].baseURI);
+		//
+		// test.assertTitle("hoiPOS CMS ABC", "pos.hoicard title : ok");
 
 
-    });
+		test.assertHttpStatus(200);
 
-    casperjs.then(function() {
+		console.log(this.getCurrentUrl());
 
-	    casperjs.start("http://pos.hoicard.com/cms/dev/dashboard", function(){
+		test.assertExists('.login-logo', 'still at login page, why not redirected???');
 
-            console.log("login success, go to page: ");
-		    // var deleteConfirmModal = document.getElementById("deleteConfirmModal");
+		var h1 = $('h1');
 
-		    // console.log("baseURI of deleteConfirmModal: " + deleteConfirmModal.childNodes[0].baseURI);
-		    //
-		    test.assertTitle("hoiPOS CMS ABC", "pos.hoicard title : ok");
+		console.log(h1.text());
 
-		    console.log(this.getCurrentUrl());
-	    });
+		casperjs.waitForUrl(/dashboard/, function(){
+			console.log('login success, now redirected');
+			test.assertUrlMatch(/dashboard/, 'go to dashboard');
+		});
 
-    });
+	});
 
-    casperjs.run(function() {
-        test.done();
-    });
+	casperjs.then(function(){
+
+		var url = 'http://pos.hoicard.com/cms/dev/dashboard';
+
+		test.assertHttpStatus(200);//4
+
+
+		test.assertExists('h1', 'find h1');//5 test
+
+		
+		test.assertUrlMatch(/dashboard/, 'go to dashboard');
+
+		
+		console.log($('h1'));
+
+		// casperjs.captureSelector('log.png', 'h1');
+		casperjs.capture('log.png');
+		// casperjs.capture('log.pdf');
+		
+		// change casperjs viewport
+		// casperjs.viewport(1280, 600);
+		casperjs.viewport(1600, 600);
+		
+		casperjs.capture('log.pdf');
+
+	});
+
+	casperjs.run(function() {
+		test.done();
+	});
 });
