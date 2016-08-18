@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5637fdb7-a300-4ce1-85d2-dde9ff569e58" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log.pdf" afterPath="$PROJECT_DIR$/log.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log.png" afterPath="$PROJECT_DIR$/log.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/casperjs-test-web-get-started.iml" afterPath="$PROJECT_DIR$/.idea/casperjs-test-web-get-started.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poshoicard-test.js" afterPath="$PROJECT_DIR$/poshoicard-test.js" />
     </list>
     <ignored path="casperjs-test-web-get-started.iws" />
@@ -32,8 +27,8 @@
       <file leaf-file-name="poshoicard-test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/poshoicard-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="320">
+              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -185,12 +180,12 @@
       <option name="presentableId" value="Default" />
       <updated>1471432891301</updated>
       <workItem from="1471432894361" duration="1905000" />
-      <workItem from="1471503428360" duration="4041000" />
+      <workItem from="1471503428360" duration="6162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5946000" />
+    <option name="totallyTimeSpent" value="8067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1554" height="912" extended-state="0" />
@@ -284,8 +279,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/poshoicard-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="320">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding />
         </state>
       </provider>
