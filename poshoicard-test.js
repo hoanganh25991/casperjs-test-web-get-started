@@ -15,8 +15,7 @@ var config = {
 
 var whereDoWeGo = [];
 
-casperjs.test.begin('Test: A PHP was encountered', numberOfTest, function suite(test){
-
+casperjs.test.begin('Test: A PHP was encountered', function suite(test){
 
 	casperjs.start(config.host, function(){
 		//check login form
@@ -151,7 +150,6 @@ casperjs.test.begin('Test: A PHP was encountered', numberOfTest, function suite(
 
 	casperjs.then(function(){
 		test.comment('fuck you');
-
 		whereDoWeGo.forEach(function(url){
 			test.comment(url);
 
