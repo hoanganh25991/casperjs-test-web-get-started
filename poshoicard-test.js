@@ -3,49 +3,164 @@ var casperjs = casper;
 
 var $ = require('jquery');
 
+var numberOfTest = 3;
+
 var config = {
-	host: 'http://pos.hoicard.com/cms/dev/',
+	host: 'http://pos.hoicard.com/cms/dev',
 	login: {
 		email: 'arteastiq',
 		password: 'zZzZzZz'
 	}
 };
 
-// sidebar-menu
+var whereDoWeGo = [];
 
-var numberOfTest = 3;
-casperjs.test.begin('Test: A PHP was encountered', numberOfTest, function suite(test) {
+casperjs.test.begin('Test: A PHP was encountered', numberOfTest, function suite(test){
+
+
 	casperjs.start(config.host, function(){
-		//detect login from
+		//check login form
 		test.assertExists('form[name="hoipos_login"]', 'Find login form');
 
 		test.comment('Logging in...');
 
+		var login = config.login;
+
 		//login
-		var host = config.host;
 		casperjs.fill('form[name="hoipos_login"]', {
-			email: host.email,
-			password:  host.password
+			email: login.email,
+			password: login.password
 		}, true);
 
 		//wait redirect to dashboard
-		casperjs.waitForUrl('Wait for redirect to dashboard', function(){
+		casperjs.waitForUrl(/dashboard/, function(){
 			//check succes redirect to dashboard
 			test.assertUrlMatch(/dashboard/, 'Success login, redirect to `dashboard`');
 		});
 	});
 
-	
+	//make sure login success by waitForUrl
+	//now go to dashboard
 
-	casperjs.start(config.host + 'dashboard', function(){
-		//check h1 is Dashboard
-		test.assertSelectorHasText('h1', 'Dashboard');
-
+	//store list of link in sidebar-menu
 
 
+	casperjs.then(function(){
+		casperjs.start(config.host + '/orders', function(){
+			test.comment('log whereDoWeGo');
+			console.log(whereDoWeGo);
+		});
 	});
 
-	
+	casperjs.then(function(){
+		casperjs.start(config.host + '/dashboard', function(){
+			//check h1 is Dashboard
+			test.assertSelectorHasText('h1', 'Dashboard');
 
-	
+			//inside casperjs.evaluate, we can use jquery as normal
+			//like jQuery(document), jQuery 'eat' the DOM
+			var info = casperjs.evaluate(function(){
+				var tmp = {};
+
+				tmp.heading1 = $('h1').text();
+
+				//detect sidebar-menu
+				var ulSideBarMenu = $('ul.sidebar-menu');
+
+				tmp.whereDoWeGo = [];
+
+				//loop through, get link
+				ulSideBarMenu.find('a').each(function(){
+					var a = $(this);
+
+					var aHref = a.attr('href');
+
+					//store real link, not #
+					var isRealLink = false;
+					if(aHref && aHref !== '#'){
+						isRealLink = aHref;
+					}
+
+					//store
+					if(isRealLink){
+						tmp.whereDoWeGo.push(isRealLink);
+					}
+				});
+
+				return tmp;
+			});
+
+			test.comment(info.heading1);
+
+			test.comment('whereDoWeGo[0] ' + info.whereDoWeGo[0]);
+
+			//remove the `dashboard` link
+			var index = info.whereDoWeGo.indexOf('http://pos.hoicard.com/cms/dev/dashboard');
+
+			if(index > -1){
+				info.whereDoWeGo.splice(index, 1);
+			}
+
+			//detect A PHP was encountered
+			// test.assertTextExists('A PHP Error was encountered');
+			test.assertTextDoesntExist('A PHP Error was encountered', 'No PHP Error found');
+
+			//store to outside,
+			//bcs test on run in same level of casperjs.then
+			whereDoWeGo = info.whereDoWeGo;
+			info.whereDoWeGo.forEach(function(url){
+				test.comment(url);
+				// casperjs.then(function(){
+				// 	// testPHPError(url);
+				// 	casperjs.start(url, function(){
+				// 		test.assertTextDoesntExist(
+				// 			'A PHP Error was encountered',
+				// 			'No PHP Error found, at ' + url
+				// 		);
+				// 	});
+				// });
+
+
+				// casperjs.start(url, function(){
+				// 	test.assertTextDoesntExist(
+				// 		'A PHP Error was encountered',
+				// 		'No PHP Error found, at ' + url
+				// 	);
+				// });
+			});
+		});
+	});
+
+	casperjs.then(function(){
+		casperjs.start(config.host + '/orders', function(){
+			test.comment('log whereDoWeGo');
+			console.log(whereDoWeGo);
+		});
+	});
+
+	//loop through any link in sidebar-menu
+	//check if A PHP Error was encountered
+
+	// //test function
+	// var testPHPError = function(url){
+	// 	casperjs.start(url, function(){
+	// 		test.assertTextDoesntExist('A PHP Error was encountered', 'No PHP Error found, at ' + url);
+	// 	});
+	// };
+	//
+	// console.log(whereDoWeGo);
+	//
+	// whereDoWeGo.forEach(function(url){
+	// 	casperjs.then(function(){
+	// 		// testPHPError(url);
+	// 		casperjs.start(url, function(){
+	// 			test.comment(url);
+	// 			test.assertTextDoesntExist('A PHP Error was encountered', 'No PHP Error found, at ' + url);
+	// 		});
+	// 	});
+	// });
+
+	casperjs.run(function(){
+		test.done();
+	});
 });

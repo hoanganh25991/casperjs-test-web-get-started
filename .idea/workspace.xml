@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5637fdb7-a300-4ce1-85d2-dde9ff569e58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log.pdf" afterPath="$PROJECT_DIR$/log.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log.png" afterPath="$PROJECT_DIR$/log.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/casperjs-test-web-get-started.iml" afterPath="$PROJECT_DIR$/.idea/casperjs-test-web-get-started.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poshoicard-test.js" afterPath="$PROJECT_DIR$/poshoicard-test.js" />
     </list>
     <ignored path="casperjs-test-web-get-started.iws" />
@@ -29,8 +32,8 @@
       <file leaf-file-name="poshoicard-test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/poshoicard-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+            <state relative-caret-position="299">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,12 +185,12 @@
       <option name="presentableId" value="Default" />
       <updated>1471432891301</updated>
       <workItem from="1471432894361" duration="1905000" />
-      <workItem from="1471503428360" duration="152000" />
+      <workItem from="1471503428360" duration="4041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2057000" />
+    <option name="totallyTimeSpent" value="5946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1554" height="912" extended-state="0" />
@@ -243,23 +246,23 @@
         <state relative-caret-position="259">
           <caret line="234" column="4" selection-start-line="234" selection-start-column="4" selection-end-line="234" selection-end-column="4" />
           <folding>
-            <marker date="1471432942006" expanded="false" signature="0:194" ph="//..." />
-            <marker date="1471432942006" expanded="true" signature="273:364" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="389:492" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="532:5541" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="5566:5726" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="5751:5798" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="5824:5889" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="5913:6073" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="6099:6722" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="6746:7575" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="7597:7691" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="7710:10583" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="9827:9842" ph="/*...*/" />
-            <marker date="1471432942006" expanded="true" signature="10601:10637" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="10654:10746" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="10769:10811" ph="..." />
-            <marker date="1471432942006" expanded="true" signature="10829:11682" ph="..." />
+            <marker date="1471504487511" expanded="false" signature="0:194" ph="//..." />
+            <marker date="1471504487511" expanded="true" signature="273:364" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="389:492" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="532:5541" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="5566:5726" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="5751:5798" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="5824:5889" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="5913:6073" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="6099:6722" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="6746:7575" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="7597:7691" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="7710:10583" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="9827:9842" ph="/*...*/" />
+            <marker date="1471504487511" expanded="true" signature="10601:10637" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="10654:10746" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="10769:10811" ph="..." />
+            <marker date="1471504487511" expanded="true" signature="10829:11682" ph="..." />
           </folding>
         </state>
       </provider>
@@ -268,13 +271,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <marker date="1471430995321" expanded="true" signature="108:843" ph="{...}" />
+            <marker date="1471430995321" expanded="true" signature="163:416" ph="{...}" />
+            <marker date="1471430995321" expanded="true" signature="365:402" ph="{&quot;q&quot;: &quot;casperjs&quot;...}" />
+            <marker date="1471430995321" expanded="true" signature="447:781" ph="{...}" />
+            <marker date="1471430995321" expanded="true" signature="640:710" ph="{...}" />
+            <marker date="1471430995321" expanded="true" signature="811:839" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/poshoicard-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="299">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
