@@ -30,7 +30,7 @@ casperjs.test.begin('login pos.hoicard', 1, function suite(test) {
 
 		    // console.log("baseURI of deleteConfirmModal: " + deleteConfirmModal.childNodes[0].baseURI);
 		    //
-		    // test.assertTitle("hoiPOS CMS", "pos.hoicard title : ok");
+		    test.assertTitle("hoiPOS CMS ABC", "pos.hoicard title : ok");
 
 		    console.log(this.getCurrentUrl());
 	    });
