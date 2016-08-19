@@ -20,7 +20,8 @@ var login = function(test){
 		//wait redirect to dashboard
 		casperjs.waitForUrl(/dashboard/, function(){
 			//check succes redirect to dashboard
-			test.assertUrlMatch(/dashboard/, 'Success login, redirect to `dashboard`');
+			test.assertUrlMatch(/dashboard/, 'Success login, Redirected to `dashboard`');
+			test.assertSelectorHasText('h1', 'Dashboard');
 		});
 	});
 };

@@ -5,6 +5,7 @@ var dailyReports = function(test, $){
 	var reportInfo,
 		orderInfo;
 	casperjs.thenOpen('http://pos.hoicard.com/cms/v2/daily_reports', function(){
+		test.assertUrlMatch(/daily_reports/, 'Go to daily_reports');
 		//casperjs evaluate = crawler through DOM
 		reportInfo = casperjs.evaluate(function(){
 			var tmp = {};
@@ -46,9 +47,9 @@ var dailyReports = function(test, $){
 		casperjs.waitTimeout = 10000;
 		//need force wait more than 5000ms
 		casperjs.waitForUrl(/daily_reports\/[0-9]+/, function(){
+			test.assertUrlMatch(/daily_reports\/[0-9]+/, 'Go to daily_reports/XXX success');
 			//reset as normal
 			casperjs.waitTimeout = 5000;
-			test.comment('go to /daily_reports/XXX success');
 			test.assertTextExists(reportInfo.rowNettTotal, 'Nett Total matched, ' + reportInfo.rowNettTotal);
 
 			orderInfo = casperjs.evaluate(function(){
@@ -92,6 +93,7 @@ var dailyReports = function(test, $){
 
 	casperjs.then(function(){
 		casperjs.waitUntilVisible('#orderModal', function(){
+			test.assertVisible('#orderModal', 'Order modal: poped up');
 			test.assertSelectorHasText(
 				'#order-id', orderInfo.id,
 				'orderInfo.id matched, ' + orderInfo.id
