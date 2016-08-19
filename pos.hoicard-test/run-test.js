@@ -14,7 +14,7 @@ casperjs.test.begin('Test: pos.hoicard.com/cms/v2', function suite(test){
 	// phpDataError(test);
 
 	dailyReports(test, $);
-
+	
 	casperjs.run(function(){
 		test.done();
 	});
