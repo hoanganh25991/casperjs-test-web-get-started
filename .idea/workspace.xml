@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e68cc9d-e2b2-452d-aad3-5a934390ea0d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test-global-variable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/casperjs-test-web-get-started.iml" afterPath="$PROJECT_DIR$/.idea/casperjs-test-web-get-started.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos.hoicard-test/login.js" afterPath="$PROJECT_DIR$/pos.hoicard-test/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poshoicard-v2.js" afterPath="$PROJECT_DIR$/poshoicard-v2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos.hoicard-test/daily-reports.js" afterPath="$PROJECT_DIR$/pos.hoicard-test/daily-reports.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos.hoicard-test/run-test.js" afterPath="$PROJECT_DIR$/pos.hoicard-test/run-test.js" />
     </list>
     <ignored path="casperjs-test-web-get-started.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,6 +27,20 @@
   <component name="FavoritesManager">
     <favorites_list name="casperjs-test-web-get-started" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="daily-reports.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pos.hoicard-test/daily-reports.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1920">
+              <caret line="60" column="27" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -32,6 +49,9 @@
       <list>
         <option value="$PROJECT_DIR$/poshoicard-v2.js" />
         <option value="$PROJECT_DIR$/exec-cmd-with-node.js" />
+        <option value="$PROJECT_DIR$/pos.hoicard-test/run-test.js" />
+        <option value="$PROJECT_DIR$/test-global-variable.js" />
+        <option value="$PROJECT_DIR$/pos.hoicard-test/daily-reports.js" />
       </list>
     </option>
   </component>
@@ -91,6 +111,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="casperjs-test-web-get-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casperjs-test-web-get-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casperjs-test-web-get-started" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos.hoicard-test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -165,19 +199,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1471594170073</updated>
-      <workItem from="1471594171384" duration="2201000" />
+      <workItem from="1471594171384" duration="3402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2201000" />
+    <option name="totallyTimeSpent" value="3402000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1554" height="912" extended-state="1" />
-    <editor active="false" />
+    <frame x="54" y="-8" width="1554" height="912" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2536814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2536814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -242,6 +276,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos.hoicard-test/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="24" column="7" selection-start-line="5" selection-start-column="4" selection-end-line="24" selection-end-column="7" />
+          <folding>
+            <marker date="1471596636276" expanded="true" signature="88:617" ph="{...}" />
+            <marker date="1471596636276" expanded="true" signature="129:613" ph="{...}" />
+            <marker date="1471596636276" expanded="true" signature="342:398" ph="{...}" />
+            <marker date="1471596636276" expanded="true" signature="484:608" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos.hoicard-test/run-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1471599568646" expanded="true" signature="330:381" ph="{...}" />
+            <marker date="1471599568646" expanded="true" signature="358:377" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-global-variable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos.hoicard-test/daily-reports.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="27" />
           <folding />
         </state>
       </provider>
