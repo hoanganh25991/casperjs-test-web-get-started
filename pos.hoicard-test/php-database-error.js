@@ -1,49 +1,11 @@
-// poshoicard-test.js
+var config = require('./config.js');
+
 var casperjs = casper;
 
-var $ = require('jquery');
-
-var config = {
-	host: 'http://pos.hoicard.com/cms/v2',
-	login: {
-		email: 'arteastiq',
-		password: 'zZzZzZz'
-	}
-};
-
-var whereDoWeGo = [];
-
-casperjs.test.begin('Test: A PHP was encountered', function suite(test){
-
-	casperjs.start(config.host, function(){
-		//check login form
-		test.assertExists('form[name="hoipos_login"]', 'Find login form');
-
-		test.comment('Logging in...');
-
-		var login = config.login;
-
-		//login
-		casperjs.fill('form[name="hoipos_login"]', {
-			email: login.email,
-			password: login.password
-		}, true);
-
-		//wait redirect to dashboard
-		casperjs.waitForUrl(/dashboard/, function(){
-			//check succes redirect to dashboard
-			test.assertUrlMatch(/dashboard/, 'Success login, redirect to `dashboard`');
-		});
-	});
-
-	//make sure login success by waitForUrl
-	//now go to dashboard
-
+var phpDataError = function(test){
+	var whereDoWeGo;
 	//store list of link in sidebar-menu
 	casperjs.thenOpen(config.host + '/dashboard', function(){
-		//check h1 is Dashboard
-		// test.assertSelectorHasText('h1', 'Dashboard');
-
 		//inside casperjs.evaluate, we can use jquery as normal
 		//like jQuery(document), jQuery 'eat' the DOM
 		var info = casperjs.evaluate(function(){
@@ -105,6 +67,7 @@ casperjs.test.begin('Test: A PHP was encountered', function suite(test){
 					'A PHP Error was encountered',
 					'No PHP Error found, at ' + url
 				);
+				
 				test.assertTextDoesntExist(
 					'A Database Error Occured',
 					'No Database Error found, at ' + url
@@ -112,27 +75,6 @@ casperjs.test.begin('Test: A PHP was encountered', function suite(test){
 			});
 		});
 	});
+};
 
-	//test analysis on daily_report
-	casperjs.thenOpen('http://pos.hoicard.com/cms/v2/daily_reports', function(){
-		var info = casperjs.evaluate(function(){
-			var tr = $('table#dataTable > thead > tr');
-
-			var thNettTotal;
-
-			tr.find('th').each(function(){
-				if($(this).text() == 'Nett Total'){
-					thNettTotal = $(this);
-				}
-			});
-
-			var nettTotalIndex = thNettTotal.index();
-		});
-	});
-
-	casperjs.run(function(){
-		test.done();
-	});
-});
-
-// casperjs.run(function(){});
+module.exports = phpDataError;

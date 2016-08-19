@@ -1,8 +1,8 @@
-var config = require('../config.js');
+var config = require('./config.js');
 
 var casperjs = casper;
 
-var login = function(){
+var login = function(test){
 	casperjs.start(config.host, function(){
 		//check login form
 		test.assertExists('form[name="hoipos_login"]', 'Find login form');
@@ -24,3 +24,6 @@ var login = function(){
 		});
 	});
 };
+
+module.exports = login;
+
