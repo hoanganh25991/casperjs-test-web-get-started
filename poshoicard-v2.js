@@ -3,8 +3,6 @@ var casperjs = casper;
 
 var $ = require('jquery');
 
-var numberOfTest = 77;
-
 var config = {
 	host: 'http://pos.hoicard.com/cms/v2',
 	login: {
@@ -42,13 +40,9 @@ casperjs.test.begin('Test: A PHP was encountered', function suite(test){
 	//now go to dashboard
 
 	//store list of link in sidebar-menu
-
-
-
-
 	casperjs.thenOpen(config.host + '/dashboard', function(){
 		//check h1 is Dashboard
-		test.assertSelectorHasText('h1', 'Dashboard');
+		// test.assertSelectorHasText('h1', 'Dashboard');
 
 		//inside casperjs.evaluate, we can use jquery as normal
 		//like jQuery(document), jQuery 'eat' the DOM
@@ -101,55 +95,8 @@ casperjs.test.begin('Test: A PHP was encountered', function suite(test){
 		test.assertTextDoesntExist('A PHP Error was encountered', 'No PHP Error found');
 	});
 
-	casperjs.thenOpen('http://pos.hoicard.com/cms/v2/orders', function(){
-		test.comment(whereDoWeGo[10]);
-		test.assertTextDoesntExist(
-			'A PHP Error was encountered',
-			'No PHP Error found, at ' + whereDoWeGo[10]
-		);
-	});
-
-	// whereDoWeGo.forEach(function(url){
-	// 	test.comment(url);
-	// 	// casperjs.thenOpen(url, function(){
-	// 	// 	test.assertTextDoesntExist(
-	// 	// 		'A PHP Error was encountered',
-	// 	// 		'No PHP Error found, at ' + url
-	// 	// 	);
-	// 	// });
-	// });
-
-	// while(whereDoWeGo.length > 0){
-	// 	var url = whereDoWeGo.pop();
-	//
-	// 	(function(url){
-	// 		casperjs.thenOpen(url, function(){
-	// 			test.assert(true, 'true is true');
-	// 			test.assertTextDoesntExist(
-	// 				'A PHP Error was encountered',
-	// 				'No PHP Error found, at ' + url
-	// 			);
-	// 		});
-	// 	})(url);
-	// }
-
-	// for(var i = 0; i++; i < whereDoWeGo.length){
-	// 	var url = whereDoWeGo[i];
-	// 	(function(url){
-	// 		test.comment(url);
-	// 		casperjs.thenOpen(whereDoWeGo[i], function(){
-	// 			test.assertTextDoesntExist(
-	// 				'A PHP Error was encountered',
-	// 				'No PHP Error found, at ' + url
-	// 			);
-	// 		});
-	// 	})(url);
-	// }
-
-	test.comment('acb $%^$');
-
+	//test A PHP Error was encountered
 	casperjs.then(function(){
-		test.comment('fuck you');
 		whereDoWeGo.forEach(function(url){
 			test.comment(url);
 
@@ -159,6 +106,23 @@ casperjs.test.begin('Test: A PHP was encountered', function suite(test){
 					'No PHP Error found, at ' + url
 				);
 			});
+		});
+	});
+
+	//test analysis on daily_report
+	casperjs.thenOpen('http://pos.hoicard.com/cms/v2/daily_reports', function(){
+		var info = casperjs.evaluate(function(){
+			var tr = $('table#dataTable > thead > tr');
+
+			var thNettTotal;
+
+			tr.find('th').each(function(){
+				if($(this).text() == 'Nett Total'){
+					thNettTotal = $(this);
+				}
+			});
+
+			var nettTotalIndex = thNettTotal.index();
 		});
 	});
 
