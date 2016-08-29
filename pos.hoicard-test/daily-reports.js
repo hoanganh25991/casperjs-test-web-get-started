@@ -50,7 +50,8 @@ var dailyReports = function(test, $){
 			test.assertUrlMatch(/daily_reports\/[0-9]+/, 'Go to daily_reports/XXX success');
 			//reset as normal
 			casperjs.waitTimeout = 5000;
-			test.assertTextExists(reportInfo.rowNettTotal, 'Nett Total matched, ' + reportInfo.rowNettTotal);
+			// test.assertTextExists(reportInfo.rowNettTotal, 'Nett Total matched, ' + reportInfo.rowNettTotal);
+			test.assertSelectorHasText('#nett_total', reportInfo.rowNettTotal, 'Nett Total matched, ' + reportInfo.rowNettTotal);
 
 			orderInfo = casperjs.evaluate(function(){
 				var tmp = {};
