@@ -62,6 +62,19 @@ var dailyReports = function(test, $){
 				// //css nth-child start at 1
 				var randomRowIndex = Math.floor((Math.random() * numberOfRowData) + 2);
 
+				var tableHeaderStr = 'table#reportOrdersDataTable > thead > tr';
+
+				var tableHeader = $(tableHeaderStr);
+
+				var totalHeaderIndex = 0;
+
+				$.each(tableHeader.find('th'), function(index, th){
+					// console.log(value.textContent);
+					if(th.textContent == 'Total'){
+						totalHeaderIndex = index;
+					}
+				})
+
 				var rowSeletorString = 'table#reportOrdersDataTable > tbody ' +
 					'tr:nth-child(' + randomRowIndex + ')';
 
@@ -69,7 +82,7 @@ var dailyReports = function(test, $){
 
 				tmp.id = order.find('td:nth-child(2)').text();
 
-				tmp.total = order.find('td:nth-child(5)').text();
+				tmp.total = order.find('td:nth-child(' + (totalHeaderIndex + 1) + ')').text();
 
 				tmp.rowX = rowSeletorString;
 
