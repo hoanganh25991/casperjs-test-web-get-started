@@ -67,11 +67,16 @@ var dailyReports = function(test, $){
 				var tableHeader = $(tableHeaderStr);
 
 				var totalHeaderIndex = 0;
+				var idHeaderIndex = 0;
 
 				$.each(tableHeader.find('th'), function(index, th){
 					// console.log(value.textContent);
 					if(th.textContent == 'Total'){
 						totalHeaderIndex = index;
+					}
+
+					if(th.textContent == 'ID'){
+						idHeaderIndex = index;
 					}
 				})
 
@@ -80,7 +85,8 @@ var dailyReports = function(test, $){
 
 				var order = $(rowSeletorString);
 
-				tmp.id = order.find('td:nth-child(2)').text();
+				// tmp.id = order.find('td:nth-child(2)').text();
+				tmp.id = order.find('td:nth-child(' + (idHeaderIndex + 1) +')').text();
 
 				tmp.total = order.find('td:nth-child(' + (totalHeaderIndex + 1) + ')').text();
 
